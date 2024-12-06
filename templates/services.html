@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Components / Accordion - EasyBook</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+    {% load static %}
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/all.png' %}" rel="icon">
+  <link href="{% static 'assets/img/all.png' %}" rel="all-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/all.png' %}" alt="">
+        <span class="d-none d-lg-block">EasyBook</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">0</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 0 notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Exit</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+{#            <li class="notification-item">#}
+{#              <i class="bi bi-exclamation-circle text-warning"></i>#}
+{#              <div>#}
+{#                <h4>Lorem Ipsum</h4>#}
+{#                <p>Quae dolorem earum veritatis oditseno</p>#}
+{#                <p>30 min. ago</p>#}
+{#              </div>#}
+{#            </li>#}
+{##}
+{#            <li>#}
+{#              <hr class="dropdown-divider">#}
+{#            </li>#}
+{##}
+{#            <li class="notification-item">#}
+{#              <i class="bi bi-x-circle text-danger"></i>#}
+{#              <div>#}
+{#                <h4>Atque rerum nesciunt</h4>#}
+{#                <p>Quae dolorem earum veritatis oditseno</p>#}
+{#                <p>1 hr. ago</p>#}
+{#              </div>#}
+{#            </li>#}
+{##}
+{#            <li>#}
+{#              <hr class="dropdown-divider">#}
+{#            </li>#}
+{##}
+{#            <li class="notification-item">#}
+{#              <i class="bi bi-check-circle text-success"></i>#}
+{#              <div>#}
+{#                <h4>Sit rerum fuga</h4>#}
+{#                <p>Quae dolorem earum veritatis oditseno</p>#}
+{#                <p>2 hrs. ago</p>#}
+{#              </div>#}
+{#            </li>#}
+{##}
+{#            <li>#}
+{#              <hr class="dropdown-divider">#}
+{#            </li>#}
+{##}
+{#            <li class="notification-item">#}
+{#              <i class="bi bi-info-circle text-primary"></i>#}
+{#              <div>#}
+{#                <h4>Dicta reprehenderit</h4>#}
+{#                <p>Quae dolorem earum veritatis oditseno</p>#}
+{#                <p>4 hrs. ago</p>#}
+{#              </div>#}
+{#            </li>#}
+{##}
+{#            <li>#}
+{#              <hr class="dropdown-divider">#}
+{#            </li>#}
+{#            <li class="dropdown-footer">#}
+{#              <a href="#">Show all notifications</a>#}
+{#            </li>#}
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+{#        <li class="nav-item dropdown">#}
+{##}
+{#          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">#}
+{#            <i class="bi bi-chat-left-text"></i>#}
+{#            <span class="badge bg-success badge-number">3</span>#}
+{#          </a><!-- End Messages Icon -->#}
+{##}
+{#          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">#}
+{#            <li class="dropdown-header">#}
+{#              You have 3 new messages#}
+{#              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>#}
+{#            </li>#}
+{#            <li>#}
+{#              <hr class="dropdown-divider">#}
+{#            </li>#}
+{##}
+{#            <li class="message-item">#}
+{#              <a href="#">#}
+{#                <img src="{% static 'assets/img/messages-1.jpg' %}" alt="" class="rounded-circle">#}
+{#                <div>#}
+{#                  <h4>Maria Hudson</h4>#}
+{#                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>#}
+{#                  <p>4 hrs. ago</p>#}
+{#                </div>#}
+{#              </a>#}
+{#            </li>#}
+{#            <li>#}
+{#              <hr class="dropdown-divider">#}
+{#            </li>#}
+{##}
+{#            <li class="message-item">#}
+{#              <a href="#">#}
+{#                <img src="{% static 'assets/img/messages-2.jpg' %}" alt="" class="rounded-circle">#}
+{#                <div>#}
+{#                  <h4>Anna Nelson</h4>#}
+{#                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>#}
+{#                  <p>6 hrs. ago</p>#}
+{#                </div>#}
+{#              </a>#}
+{#            </li>#}
+{#            <li>#}
+{#              <hr class="dropdown-divider">#}
+{#            </li>#}
+{##}
+{#            <li class="message-item">#}
+{#              <a href="#">#}
+{#                <img src="{% static 'assets/img/messages-3.jpg' %}" alt="" class="rounded-circle">#}
+{#                <div>#}
+{#                  <h4>David Muldon</h4>#}
+{#                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>#}
+{#                  <p>8 hrs. ago</p>#}
+{#                </div>#}
+{#              </a>#}
+{#            </li>#}
+{#            <li>#}
+{#              <hr class="dropdown-divider">#}
+{#            </li>#}
+{##}
+{#            <li class="dropdown-footer">#}
+{#              <a href="#">Show all messages</a>#}
+{#            </li>#}
+{##}
+{#          </ul><!-- End Messages Dropdown Items -->#}
+{##}
+{#        </li><!-- End Messages Nav -->#}
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="{% static 'assets/img/fred.jpg' %}" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">F. Kinyanjui</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Fred Kinyanjui</h6>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'users-profile' %}">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'users-profile' %}">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'pages-faq' %}">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'pages-login' %}">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'index' %}">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+{#      <li class="nav-item">#}
+{#        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">#}
+{#          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>#}
+{#        </a>#}
+{#        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">#}
+{#          <li>#}
+{#            <a href="{% url 'components-alerts' %}">#}
+{#              <i class="bi bi-circle"></i><span>Alerts</span>#}
+{#            </a>#}
+{#          </li>#}
+{#          <li>#}
+{#            <a href="{% url 'components-accordion' %}">#}
+{#              <i class="bi bi-circle"></i><span>Accordion</span>#}
+{#            </a>#}
+{#          </li>#}
+{#        </ul>#}
+{#      </li><!-- End Components Nav -->#}
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Book Now</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+{#          <li>#}
+{#            <a href="{% url 'forms-elements' %}">#}
+{#              <i class="bi bi-circle"></i><span>Form Elements</span>#}
+{#            </a>#}
+{#          </li>#}
+{#          <li>#}
+{#            <a href="{% url 'forms-layouts' %}">#}
+{#              <i class="bi bi-circle"></i><span>Form Layouts</span>#}
+{#            </a>#}
+{#          </li>#}
+
+            <li>
+                <a href="{% url 'oneway' %}">
+                  <i class="bi bi-circle"></i><span>One-Way Booking</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'hire' %}">
+                  <i class="bi bi-circle"></i><span>Hire A Bus</span>
+                </a>
+            </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Confirm Your Booking</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'onewayconfirmation' %}">
+              <i class="bi bi-circle"></i><span>One-Way Confirmation</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'bushireconfirmation' %}">
+              <i class="bi bi-circle"></i><span>Bus Hire Confirmation</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'users-profile' %}">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'about' %}">
+          <i class="bi bi-info-circle"></i>
+          <span>About</span>
+        </a>
+      </li><!-- End About Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'services' %}">
+          <i class="bi bi-briefcase"></i>
+          <span>Services</span>
+        </a>
+      </li><!-- End Services Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'pages-faq' %}">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'pages-contact' %}">
+          <i class="bi bi-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'pages-register' %}">
+          <i class="bi bi-card-list"></i>
+          <span>Register</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'pages-login' %}">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'pages-blank' %}">
+          <i class="bi bi-file-earmark"></i>
+          <span>Blank</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Services Page</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+          <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item active">Blank</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+
+  <section class="section">
+    <div class="row">
+      <!-- Section 1: Pricing Details -->
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Pricing Details</h5>
+            <p>
+              Pricing for trips is based on the distance in kilometers. Rates increase during peak seasons such as:
+              <strong>Christmas, Easter, Madaraka Day, Mashujaa Day, and Jamhuri Day</strong>.
+              Offers may apply during low-demand holidays such as <strong>Labor Day</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- Section 4: Location-Based Pricing Table -->
+<div class="col-lg-12">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">One-Way Bus Hiring Prices</h5>
+      <!-- Table with hoverable rows -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">From-Location</th>
+            <th scope="col">Distance (KM)</th>
+            <th scope="col">Price (KES) per Distance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Nairobi</td>
+            <td>100</td>
+            <td>1,000</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Mombasa</td>
+            <td>500</td>
+            <td>5,000</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Kisumu</td>
+            <td>300</td>
+            <td>3,000</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Nakuru</td>
+            <td>150</td>
+            <td>1,500</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Eldoret</td>
+            <td>320</td>
+            <td>3,200</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Thika</td>
+            <td>50</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>Nyeri</td>
+            <td>200</td>
+            <td>2,000</td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>Meru</td>
+            <td>230</td>
+            <td>2,300</td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>Kericho</td>
+            <td>300</td>
+            <td>3,000</td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>Kitale</td>
+            <td>380</td>
+            <td>3,800</td>
+          </tr>
+          <tr>
+            <th scope="row">11</th>
+            <td>Machakos</td>
+            <td>80</td>
+            <td>800</td>
+          </tr>
+          <tr>
+            <th scope="row">12</th>
+            <td>Nanyuki</td>
+            <td>200</td>
+            <td>2,000</td>
+          </tr>
+          <tr>
+            <th scope="row">13</th>
+            <td>Naivasha</td>
+            <td>90</td>
+            <td>900</td>
+          </tr>
+          <tr>
+            <th scope="row">14</th>
+            <td>Kakamega</td>
+            <td>380</td>
+            <td>3,800</td>
+          </tr>
+          <tr>
+            <th scope="row">15</th>
+            <td>Bungoma</td>
+            <td>420</td>
+            <td>4,200</td>
+          </tr>
+          <tr>
+            <th scope="row">16</th>
+            <td>Voi</td>
+            <td>330</td>
+            <td>3,300</td>
+          </tr>
+          <tr>
+            <th scope="row">17</th>
+            <td>Embu</td>
+            <td>120</td>
+            <td>1,200</td>
+          </tr>
+          <tr>
+            <th scope="row">18</th>
+            <td>Isiolo</td>
+            <td>250</td>
+            <td>2,500</td>
+          </tr>
+          <tr>
+            <th scope="row">19</th>
+            <td>Malindi</td>
+            <td>530</td>
+            <td>5,300</td>
+          </tr>
+          <tr>
+            <th scope="row">20</th>
+            <td>Lamu</td>
+            <td>700</td>
+            <td>7,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- End Table with hoverable rows -->
+    </div>
+  </div>
+</div>
+
+
+<!-- Section 3: Pricing Table -->
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Bus Hiring Pricing Table</h5>
+            <!-- Table with hoverable rows -->
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Distance (KM)</th>
+                  <th scope="col">Price (KES)</th>
+                  <th scope="col">Peak Season Price</th>
+                  <th scope="col">Offer Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>0-50</td>
+                  <td>5,000</td>
+                  <td>6,500</td>
+                  <td>4,000</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>51-100</td>
+                  <td>10,000</td>
+                  <td>12,500</td>
+                  <td>9,000</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>101-200</td>
+                  <td>15,000</td>
+                  <td>20,000</td>
+                  <td>13,000</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>201-300</td>
+                  <td>25,000</td>
+                  <td>30,000</td>
+                  <td>22,000</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>301+</td>
+                  <td>35,000</td>
+                  <td>40,000</td>
+                  <td>30,000</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Table with hoverable rows -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Additional Information -->
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Additional Information</h5>
+            <p>
+              <strong>EasyBook</strong> offers discounts for large group bookings and loyal customers. Payments can be made via M-Pesa. Cancellations must be made 48 hours in advance to avoid charges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    </section>
+
+  </main><!-- End #main -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>EasyBook</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="">EasyBook</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/apexcharts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/chart.js/chart.umd.js' %}"></script>
+  <script src="{% static 'assets/vendor/echarts/echarts.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/quill/quill.js' %}"></script>
+  <script src="{% static 'assets/vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static 'assets/vendor/tinymce/tinymce.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
